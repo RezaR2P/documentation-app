@@ -5,8 +5,8 @@ const Sidebar = () => {
   return (
     <nav id="sidebar" className="sidebar" role="navigation">
       <div className="sidebar-brand">
-        <TiHtml5 className="icon-html" />
-        <span>HTML Documentation</span>
+        <TiHtml5 className="icon-html ps-2" />
+        HTML Documentation
       </div>
       <div className="sidebar-nav">
         <ul>
