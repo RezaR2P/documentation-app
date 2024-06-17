@@ -129,12 +129,3 @@ table {
 body {
   font-family: "Poppins", sans-serif;
 }
-
-.app-container {
-  display: flex;
-}
-
-#main-doc {
-  padding: 20px;
-  width: 100%;
-}

@@ -1,11 +1,15 @@
-.container {
+#main-doc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  margin-left: 270px; /* Adjusted for sidebar width + padding */
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
-  max-width: 800px;
-  margin: 20px auto; /* Adjusted for top/bottom spacing */
+  max-width: fit-content;
+  flex: 1;
+  margin: auto;
+  margin-left: 250px; /* Tambahkan margin-left untuk menghindari sidebar */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
