@@ -1,56 +1,43 @@
+import { useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 
-const Home = () => {
+const Home = ({ toggleNavAndSidebar }) => {
+  useEffect(() => {
+    if (typeof toggleNavAndSidebar === "function") {
+      toggleNavAndSidebar();
+      return () => {
+        toggleNavAndSidebar();
+      };
+    }
+  }, [toggleNavAndSidebar]);
+
   return (
     <div className="home-container">
-      <h1>Welcome to HTML Documentation</h1>
-      <div className="cards-container">
-        <div className="card">
-          <h2>Pengenalan</h2>
-          <p>
-            An introduction to HTML, covering the basics and essential concepts.
-          </p>
-        </div>
-        <div className="card">
-          <h2>Referensi HTML</h2>
-          <p>
-            Detailed reference material on HTML elements, attributes, and more.
-          </p>
-        </div>
-        <div className="card">
-          <h2>HTML FORM</h2>
-          <p>
-            Learn about HTML forms, including form elements, attributes, and
-            validation.
-          </p>
-        </div>
-        <div className="card">
-          <h2>Element Tag HTML</h2>
-          <p>
-            Information on various HTML tags and their usage in web development.
-          </p>
-        </div>
-        <div className="card">
-          <h2>HTML Media</h2>
-          <p>
-            Explore how to embed and manage media such as images, audio, and
-            video in HTML.
-          </p>
-        </div>
-        <div className="card">
-          <h2>HTML API</h2>
-          <p>
-            An overview of HTML APIs, including examples and practical
-            applications.
-          </p>
-        </div>
-        <div className="card">
-          <h2>Grafik HTML</h2>
-          <p>Learn about creating and manipulating graphics using HTML.</p>
+      <h1 className="text-center mb-4">Home Page</h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
+            <div className="card mb-4 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title">HTML</h5>
+                <p className="card-text">Lorem ipsum dolor sit amet.</p>
+                <Link to="/documentation" className="btn btn-primary">
+                  Go to Documentation
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
+};
+
+Home.propTypes = {
+  toggleNavAndSidebar: PropTypes.func.isRequired,
 };
 
 export default Home;

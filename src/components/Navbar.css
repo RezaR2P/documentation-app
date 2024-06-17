@@ -1,4 +1,3 @@
-/* General Styles for the Navbar */
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -12,8 +11,7 @@
   width: 100%;
 }
 
-/* Styles for Navbar Navigation Links */
-.navbar-nav ul {
+.navbar-nav {
   display: flex;
   list-style: none;
   margin: 0;
@@ -35,14 +33,12 @@
   color: #383434;
 }
 
-/* Add padding to the body to avoid content behind the navbar */
 body {
-  padding-top: 50px; /* Adjust this value if the navbar height changes */
+  padding-top: 50px;
   margin: 0;
 }
 
-/* Add padding to the sections to prevent them from being hidden by the fixed navbar */
 section {
-  padding-top: 60px; /* Adjust this value based on the height of the navbar */
-  margin-top: -60px; /* Negative margin to offset the padding */
+  padding-top: 60px;
+  margin-top: -60px;
 }

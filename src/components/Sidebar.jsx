@@ -1,47 +1,79 @@
+import PropTypes from "prop-types";
 import "./Sidebar.css";
-import { TiHtml5 } from "react-icons/ti";
 
-const Sidebar = () => {
+const Sidebar = ({ show, toggleNavAndSidebar }) => {
+  if (!show) {
+    return null;
+  }
+
+  const handleSidebarClick = () => {
+    toggleNavAndSidebar();
+  };
+
   return (
     <nav id="sidebar" className="sidebar" role="navigation">
-      <div className="sidebar-brand">
-        <TiHtml5 className="icon-html ps-2" />
-        HTML Documentation
-      </div>
       <div className="sidebar-nav">
         <ul>
-          <li className="nav-item">
-            <a className="nav-link" href="#pengenalan">
+          <li className="sidebar-item">
+            <a
+              className="sidebar-link"
+              href="#pengenalan"
+              onClick={handleSidebarClick}
+            >
               Pengenalan
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#referensi-html">
+          <li className="sidebar-item">
+            <a
+              className="sidebar-link"
+              href="#referensi-html"
+              onClick={handleSidebarClick}
+            >
               Referensi HTML
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#html-form">
+          <li className="sidebar-item">
+            <a
+              className="sidebar-link"
+              href="#html-form"
+              onClick={handleSidebarClick}
+            >
               HTML Forms
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#element-tag">
+          <li className="sidebar-item">
+            <a
+              className="sidebar-link"
+              href="#element-tag"
+              onClick={handleSidebarClick}
+            >
               Element Tag HTML
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#html-media">
+          <li className="sidebar-item">
+            <a
+              className="sidebar-link"
+              href="#html-media"
+              onClick={handleSidebarClick}
+            >
               HTML Media
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#html-api">
+          <li className="sidebar-item">
+            <a
+              className="sidebar-link"
+              href="#html-api"
+              onClick={handleSidebarClick}
+            >
               HTML API
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#grafik-html">
+          <li className="sidebar-item">
+            <a
+              className="sidebar-link"
+              href="#grafik-html"
+              onClick={handleSidebarClick}
+            >
               Grafik HTML
             </a>
           </li>
@@ -49,6 +81,11 @@ const Sidebar = () => {
       </div>
     </nav>
   );
+};
+
+Sidebar.propTypes = {
+  show: PropTypes.bool.isRequired,
+  toggleNavAndSidebar: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
