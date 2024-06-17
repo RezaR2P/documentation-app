@@ -7,8 +7,6 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   max-width: fit-content;
-  flex: 1;
-  margin: auto;
   margin-left: 250px; /* Tambahkan margin-left untuk menghindari sidebar */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -22,6 +20,7 @@
 }
 
 .header {
+  margin-top: 50px;
   font-size: 1.75rem;
   margin-bottom: 1rem;
   font-weight: 700;
