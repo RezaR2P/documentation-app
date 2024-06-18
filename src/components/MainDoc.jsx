@@ -17,15 +17,18 @@ MainSection.propTypes = {
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-const MainDoc = ({ toggleNavAndSidebar }) => {
+const MainDoc = ({ toggleSidebar }) => {
   useEffect(() => {
-    if (typeof toggleNavAndSidebar === "function") {
-      toggleNavAndSidebar();
+    const currentPath = window.location.pathname;
+    const isDocumentationPage = currentPath === "/documentation";
+
+    if (typeof toggleSidebar === "function" && isDocumentationPage) {
+      toggleSidebar();
       return () => {
-        toggleNavAndSidebar();
+        toggleSidebar();
       };
     }
-  }, [toggleNavAndSidebar]);
+  }, [toggleSidebar]);
 
   const sections = [
     {
@@ -66,13 +69,14 @@ const MainDoc = ({ toggleNavAndSidebar }) => {
             </a>
           </li>
         </ul>
+        u
       </section>
     </main>
   );
 };
 
 MainDoc.propTypes = {
-  toggleNavAndSidebar: PropTypes.func,
+  toggleSidebar: PropTypes.func,
 };
 
 export default MainDoc;

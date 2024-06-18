@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { TiHtml5 } from "react-icons/ti";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -47,10 +45,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  // Add prop types if needed
 };
 
 export default Navbar;

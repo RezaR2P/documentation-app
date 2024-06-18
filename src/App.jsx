@@ -7,10 +7,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const App = () => {
-  const [showNavAndSidebar, setShowNavAndSidebar] = useState(true);
-  const toggleNavAndSidebar = () => {
+  const [showSidebar, setShowSidebar] = useState(true);
+
+  const toggleSidebar = () => {
     const isDocumentationPage = window.location.pathname === "/documentation";
-    setShowNavAndSidebar((prevShow) => {
+    setShowSidebar((prevShow) => {
       if (isDocumentationPage) {
         return !prevShow;
       } else {
@@ -25,18 +26,15 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <Navbar show={showNavAndSidebar} onSidebarClick={toggleNavAndSidebar} />
-        <Sidebar
-          show={showNavAndSidebar}
-          onSidebarClick={toggleNavAndSidebar}
-        />
+        <Navbar show={showSidebar} onSidebarClick={toggleSidebar} />
+        <Sidebar show={showSidebar} onSidebarClick={toggleSidebar} />
         <div className="content-container">
           <Routes>
             <Route
               path="/"
               element={
                 <Suspense fallback={<div>Loading...</div>}>
-                  <Home toggleNavAndSidebar={toggleNavAndSidebar} />
+                  <Home toggleNavAndSidebar={toggleSidebar} />
                 </Suspense>
               }
             />
@@ -44,7 +42,7 @@ const App = () => {
               path="/documentation"
               element={
                 <Suspense fallback={<div>Loading...</div>}>
-                  <MainDoc toggleNavAndSidebar={toggleNavAndSidebar} />
+                  <MainDoc toggleNavAndSidebar={toggleSidebar} />
                 </Suspense>
               }
             />
